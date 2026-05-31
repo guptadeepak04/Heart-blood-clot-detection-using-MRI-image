@@ -1,0 +1,162 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+p {
+    color: #7f8c8d;
+}
+
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 25px;
+    border: 2px dashed #3498db;
+    border-radius: 10px;
+    transition: 0.2s;
+    background-color: #ecf0f1;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.fake-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-preview {
+    width: 100%;
+    min-height: 200px;
+    border: 2px solid #dddddd;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #cccccc;
+    border-radius: 10px;
+}
+
+.image-preview__img {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.predict-btn {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.predict-btn:hover {
+    background: #27ae60;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.segmentation-panel {
+    margin-top: 20px;
+}
+
+.segmentation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.seg-card {
+    border: 1px solid #dfe6e9;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fafcfd;
+}
+
+.seg-card p {
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.seg-image {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    display: block;
+}
+
+.danger {
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+.success {
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 1.2rem;
+    }
+
+    .segmentation-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cardiac MRI Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>AI Cardiac MRI Analyzer</h1>
+            <p>Upload an MRI scan for clot classification and heart-region segmentation.</p>
+        </header>
+
+        <div class="upload-section">
+            <form id="upload-form">
+                <div class="file-drop-area" id="drop-area">
+                    <span class="fake-btn">Choose Image</span>
+                    <span class="file-msg">or drag and drop here</span>
+                    <input class="file-input" type="file" id="file" accept="image/*" required>
+                </div>
+
+                <div class="image-preview" id="image-preview">
+                    <img src="" alt="Image Preview" class="image-preview__img">
+                    <span class="image-preview__default-text">Image Preview</span>
+                </div>
+
+                <button type="submit" class="predict-btn" id="predict-btn">Analyze MRI</button>
+            </form>
+        </div>
+
+        <div id="loading" class="hidden">Analyzing...</div>
+
+        <div id="result" class="result-box hidden">
+            <h2>Diagnosis Report</h2>
+            <div class="result-content">
+                <p>Status: <span id="res-label">--</span></p>
+                <p>Confidence: <span id="res-confidence">--</span></p>
+            </div>
+
+            <div class="segmentation-panel">
+                <h3>Segmentation Output</h3>
+                <div class="segmentation-grid">
+                    <div class="seg-card">
+                        <p>Binary Mask</p>
+                        <img id="seg-mask" src="" alt="Segmentation mask" class="seg-image">
+                    </div>
+                    <div class="seg-card">
+                        <p>Overlay</p>
+                        <img id="seg-overlay" src="" alt="Segmentation overlay" class="seg-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
